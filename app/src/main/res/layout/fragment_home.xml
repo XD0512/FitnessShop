@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#151515"
+    tools:context=".fragment.HomeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/img_2" />
+
+                <RelativeLayout
+                    android:id="@+id/ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Discover how to shape the body"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/profile" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Thu, 12th may"
+                    android:textColor="#A39797" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/search_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_data"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="15dp">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_data"
+                        android:background="#242424"
+                        android:drawableStart="@drawable/ic_baseline_search_24"
+                        android:hint="Search anything..."
+                        android:padding="15dp"
+                        android:textColorHint="#5C5A5B" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_categories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/search_card"
+                    android:text="Top Categories >"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_categories"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_categories_rv" />
+
+                <TextView
+                    android:id="@+id/tv_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rv_categories"
+                    android:text="Volleyball training videos >"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_sports"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_video"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_sports" />
+
+                <TextView
+                    android:id="@+id/tv_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rv_sports"
+                    android:text="News >"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tv_news"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_news" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>
